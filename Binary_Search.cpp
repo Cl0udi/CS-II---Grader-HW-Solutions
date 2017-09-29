@@ -3,7 +3,7 @@
 
    Author: Alfonso de la Morena
    CS 2308-001
-   Program: #2
+   Program: #1
    Due Date: 09/26/17
 
 */
