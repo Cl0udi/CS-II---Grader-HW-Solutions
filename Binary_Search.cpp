@@ -1,5 +1,5 @@
 /*
-   File: HW_2_Grader.cpp
+   File: Binary_Search.cpp
 
    Author: Alfonso de la Morena
    CS 2308-001
@@ -52,7 +52,7 @@ int main()
     return 0;
 }
 
-int binarySearch(int searchArray[], const int arraySize, int account)
+int binarySearch(int searchArray[], const int ARRAYSIZE, int account)
 {
     /*
     For this function you need a sorted array.
@@ -65,21 +65,17 @@ int binarySearch(int searchArray[], const int arraySize, int account)
     */
 
     int bottom = 0,
-        top    = arraySize - 1,     //To account for arrays starting at 0.
+        top    = ARRAYSIZE - 1,     //To account for arrays starting at 0.
         middle = (top + bottom)/2;  //Bottom is 0 but this is basic principle.
 
-    while(true) //We always want loop to run so no need for a condition
+    while(bottom <= top)
     {
+        //Redefine middle every loop.
+        middle = (top + bottom)/2;
+
         //Checks to see if middle value matches account we want
         if(searchArray[middle] == account)
         {return middle;}
-
-        /*
-        If value is not in array, the last loop would have a 1 slot difference
-        between top and bottom. If that happens you end the search.
-        */
-        if(top == bottom || top == bottom + 1)
-        {return -1;}
 
         /*
         If value is bigger than middle then bottom half of array does not
@@ -87,14 +83,21 @@ int binarySearch(int searchArray[], const int arraySize, int account)
         You then recalculate middle to run the loop again so you can keep
         searching for the value.
         */
-        else if(account > middle)
-        {bottom = middle; middle = (top + bottom)/2;}
+        else if(account > searchArray[middle])
+        {bottom = ++middle;}
 
         /*
         Same as before we are just getting rid of the top half this time by
         assigning middle as the new top.
         */
-        else if(account < middle)
-        {top = middle; middle = (top + bottom)/2;}
+        else
+        {top = --middle;}
     }
+
+    /*
+    If value is not in array, the last loop would have bottom be equal to
+    or more than top. If that happens we return a negative number.
+    */
+
+    return -1;
 }
