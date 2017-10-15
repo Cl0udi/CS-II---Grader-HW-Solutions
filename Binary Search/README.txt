@@ -1,4 +1,5 @@
 Binary Search
+
 Date Posted: 09/29/2017
 Language: C++
 Files: 1 cpp file
