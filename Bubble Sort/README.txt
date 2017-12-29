@@ -5,4 +5,3 @@ Language: C++
 Files: 1 cpp file
 Executable: Bubble_Sort.cpp
 Libraries: iostream, cstdlib
-Worst Case Run Time <= O(N^2)
