@@ -4,4 +4,4 @@ Date Posted: 10/22/2017
 Language: C++
 Files: 2 cpp files
 Executable: Circle_Solution.cpp and Movie_Solution.cpp
-Libraries: iostream, cstdlib
+Libraries: iostream, math
